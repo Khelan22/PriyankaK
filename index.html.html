@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Girlfriend?</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8d7e1;
+            text-align: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease; /* Smooth transition for glowing effect */
+        }
+
+        .content {
+            margin: 50px;
+        }
+
+        /* Button Styles */
+        button {
+            padding: 15px 30px;
+            margin: 20px;
+            background-color: #ff4b6e;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        button:active {
+            transform: scale(1.1);
+        }
+
+        /* Smaller "Yes" Button on Page 3 */
+        #yes-button-page3 {
+            font-size: 16px;
+            padding: 12px 25px;
+        }
+
+        /* Glowing effect */
+        .glow-effect {
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px #ff4b6e, 0 0 20px #ff4b6e, 0 0 30px #ff4b6e;
+                transform: scale(1);
+            }
+            100% {
+                box-shadow: 0 0 30px #ff4b6e, 0 0 60px #ff4b6e, 0 0 90px #ff4b6e;
+                transform: scale(1.05);
+            }
+        }
+
+        /* Love Message Styles */
+        .love-message {
+            font-size: 24px;
+            color: #ff4b6e;
+            text-shadow: 2px 2px 10px rgba(255, 70, 105, 0.8);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Centering the Image */
+        .center-image {
+            width: 60%;
+            margin: 20px 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Cloud/Note Styling for Last Page */
+        .cloud-note {
+            font-size: 18px;
+            color: #ff4b6e;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            width: 250px;
+            line-height: 1.6;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .cloud-note1 {
+            top: 10%;
+            left: 10%;
+        }
+
+        .cloud-note2 {
+            top: 10%;
+            right: 10%;
+        }
+
+        .cloud-note3 {
+            bottom: 10%;
+            left: 10%;
+        }
+
+        .cloud-note4 {
+            bottom: 10%;
+            right: 10%;
+        }
+
+        /* Centering the second message on page 4 */
+        .message-center {
+            text-align: center;
+            font-size: 24px;
+            margin: 50px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Trust Question -->
+    <div class="content" id="page1">
+        <h1>Do you trust me?👀</h1>
+        <button id="yes-button" onclick="nextPage()">Yes</button>
+        <button id="no-button" onclick="noAnswer()">No</button>
+    </div>
+
+    <!-- Page 2: Love Message -->
+    <div class="content" id="page2" style="display: none;">
+        <h1 class="love-message">
+            Out of all the moments we've shared, there's one more I want to create with you. But before that... take a deep breath, smile, and just know, this is something straight from my heart to yours❤
+        </h1>
+        <button onclick="nextPage()">Are you ready!!</button>
+    </div>
+
+    <!-- Page 3: Final Love Message without Notes -->
+    <div class="content" id="page3" style="display: none;">
+        <h1 class="message-center">
+            From the moment we met, something about you just felt right🥺
+            <br>
+            We’ve been on this journey together for over a year now, laughing, learning, growing, and creating something so rare and beautiful. You’ve been my peace, my chaos, my comfort, my biggest distraction, and my greatest motivation, all at once. The way you make me feel is indescribable, and no matter how much time passes, you still take my breath away🥺❤️
+            <br><br>
+            You know me better than anyone else. You see parts of me that no one else does, and somehow, you still choose to stay. You challenge me, drive me crazy, make me weak, and yet, I’ve never felt stronger. I don’t just want you in my life, I need you♾❤️
+            <br><br>
+            There’s no one else I’d rather share my moments with, no one else I’d rather annoy just to see that cute, frustrated face you make, no one else I’d rather tease, hold, or protect. You are my safe place, my best friend, my biggest blessing.
+            <br><br>
+            We’ve been through so much together, late-night talks, deep conversations, moments of pure happiness, and even challenges that tested us. But through it all, I’ve realized one thing, no matter what happens, I always want you. I want you on your best days, your worst days, when you’re happy, when you’re sad, when you’re stressed, and when you’re excited. I want to be the one who’s always there for you, supporting you, loving you, and making you feel like the most special woman in the world, because to me, you are.
+            <br><br>
+            So, here I am, putting it out there, no holding back. I want you to be mine. Fully, officially, completely. No more “almost,” no more “what ifs.” Just us🙈👀
+            <br><br>
+            Priyanka Naran, will you be my girlfriend?❤️❤️
+        </h1>
+
+        <!-- Yes Button (Smaller and above Open Me button) -->
+        <button id="yes-button-page3" class="glow-effect" onclick="applyGlowEffect()">Yes</button>
+
+        <!-- Open Me Button (A few lines below Yes Button) -->
+        <button onclick="openImagePage()">Open Me</button>
+    </div>
+
+    <!-- Page 4: Us Image and Caption -->
+    <div class="content" id="page4" style="display: none;">
+        <h1 class="message-center">
+            My love, my baby, my everything,
+            <br>
+            Hearing you say “yes” is one of the happiest moments of my life🥺. You have no idea how much this means to me. I don’t think words can truly capture how much you mean to me, but I’ll spend every single day proving it to you🤞. You are the best thing that has ever happened to me, and I’m so grateful to finally call you my girlfriend🙈❤️
+            <br><br>
+            From the very first moment, I felt it, this connection, this undeniable spark between us. And now, I get to wake up every day knowing you’re mine. I want to love you in every way possible, mentally, emotionally, physically. I want to be the one you trust, the one you run to when you need comfort, the one who makes your heart race and your body crave my touch😏
+            <br><br>
+            I can’t wait for all the things we’re going to do together. The deep conversations, the crazy adventures, I want to hold you so close that not even air could fit between us. I want to kiss you until you forget what time it is😘 tease you just to hear you beg💦, and make you feel things you’ve never felt before.
+            <br><br>
+            I love everything about you, your mind, your soul, your body, your laugh, the way you look at me like I’m the only man in the world. I want to explore every part of you, your heart, your mind, your body, and give you everything you deserve. I want to be the one who makes you feel like the most special woman alive every single day. No one else will ever love you the way I do. I promise you that.
+            <br><br>
+            Baby, you’re mine now, and I’m going to remind you of that every single day❤️❤️
+            <br><br>
+            Here’s to us, to passion, to love, to forever. I love you more than I can ever put into words. You’re my girl now, and trust me, I’m going to make you feel like the most special, most desired, most loved woman in the world😫🥺
+            <br><br>
+            Now come here and let me love on you properly❤️❤️
+        </h1>
+
+        <!-- Us Image -->
+        <img src="images/us.jpg" alt="Us" class="center-image">
+
+        <h2>Us, my favorite place to be. Every moment with you is a memory I never want to forget. You are my love, my happiness, my everything. I love you so so much ❤️</h2>
+
+        <!-- Back to Start Button -->
+        <button onclick="backToStart()">Back to Beginning</button>
+    </div>
+
+    <script>
+        // Function to apply glowing effect
+        function applyGlowEffect() {
+            document.body.classList.add('glow-effect');
+            setTimeout(function() {
+                document.body.classList.remove('glow-effect');
+            }, 1500);  // Glowing effect duration
+        }
+
+        // Function for next page navigation
+        function nextPage() {
+            let currentPage = document.querySelector('.content:not([style*="display: none"])');
+            let nextPage = currentPage.nextElementSibling;
+            currentPage.style.display = 'none';
+            nextPage.style.display = 'block';
+        }
+
+        // Function for no answer handling
+        function noAnswer() {
+            let noButton = document.getElementById('no-button');
+            let noClicks = parseInt(localStorage.getItem('noClicks') || '0');
+            noClicks++;
+            localStorage.setItem('noClicks', noClicks);
+            if (noClicks < 5) {
+                noButton.style.transform = `scale(${1 + 0.1 * noClicks})`;
+            } else {
+                noButton.style.display = 'none';
+            }
+        }
+
+        // Open the image page
+        function openImagePage() {
+            let page3 = document.getElementById('page3');
+            page3.style.display = 'none';
+            let page4 = document.getElementById('page4');
+            page4.style.display = 'block';
+        }
+
+        // Back to Start
+        function backToStart() {
+            document.getElementById('page1').style.display = 'block';
+            document.getElementById('page4').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
